@@ -1,0 +1,639 @@
+<html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Countdown to APSC CCE Prelims 2024</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Urbanist&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+
+  <style>
+
+    body {
+
+      font-family: 'Poppins', Arial, sans-serif;    
+
+      background: linear-gradient(to right, #0f0f0f, #1a1a1a);
+
+      color: #fff;
+
+      margin: 0;
+
+      padding: 2rem;
+
+      font-size: 13px;
+
+      display: flex;
+
+      flex-direction: row;
+
+      gap: 2rem;
+
+      line-height: 2.0;
+
+    }
+
+ 
+
+     h1, h2 {
+
+  font-family: 'Urbanist', sans-serif;
+
+  font-weight: 700;
+
+  color: #00FFFF;
+
+    }
+
+
+    .container {
+
+      max-width: 700px;
+
+      flex-grow: 1;
+
+    }
+
+
+    .card {
+
+      background: rgba(30, 30, 30, 0.9);
+
+      border-radius: 1rem;
+
+      padding: 1.5rem;
+
+      box-shadow: 0 10px 30px rgba(0, 255, 255, 0.05);
+
+      margin-bottom: 2rem;
+
+    }
+
+
+    h1, h2 {
+
+      font-weight: 700;
+
+      color: #00FFFF;
+
+    }
+
+
+    .countdown {
+
+      font-size: 3rem;
+
+      font-weight: bold;
+
+      letter-spacing: 2px;
+
+      display: flex;
+
+      gap: 1rem;
+
+      justify-content: space-between;
+
+      background: #000;
+
+      padding: 1rem;
+
+      border-radius: 0.5rem;
+
+      text-align: center;
+
+    }
+
+
+    .countdown div {
+
+      flex: 1;
+
+    }
+
+
+    .countdown-label {
+
+      font-size: 0.9rem;
+
+      color: #888;
+
+      display: block;
+
+      margin-top: 0.2rem;
+
+    }
+
+
+    ul {
+
+      list-style: none;
+
+      padding-left: 0;
+
+    }
+
+
+    li {
+
+      margin-bottom: 0.5rem;
+
+    }
+
+
+    label {
+
+      margin-left: 0.5rem;
+
+      cursor: pointer;
+
+    }
+
+
+    input[type="checkbox"]:focus {
+
+      outline: 2px solid #00ffe5;
+
+      accent-color: #00ffe5;
+
+    }
+
+
+    .checklist {
+
+      width: 350px;
+
+      position: sticky;
+
+      top: 2rem;
+
+      align-self: flex-start;
+
+
+    #checklist > li > label,
+
+    #checklist > li > .section-title {
+
+    color: #ffd700; /* Choose a rich golden yellow */
+
+    font-size: 1rem; /* Slightly larger, adjust as needed */
+
+    font-weight: bold;
+
+    font-family: 'Poppins', sans-serif;
+
+    }
+
+    }
+
+
+   .checklist-heading {
+
+   font-size: 1.6rem;
+
+   font-weight: 600;
+
+   color: #ffcc00;
+
+   margin-bottom: 1rem;
+
+   text-shadow: 1px 1px 2px rgba(255, 204, 0, 0.2);
+
+   }
+
+
+    .sublist {
+
+      margin-left: 1.5rem;
+
+    }
+
+
+    .section-title {
+
+      font-weight: bold;
+
+      margin-top: 1rem;
+
+      color: #ccc;
+
+    }
+
+
+    #quote {
+
+      font-style: italic;
+
+      font-size: 1.2rem;
+
+      color: #ccc;
+
+      transition: opacity 0.8s ease-in;
+
+      opacity: 1;
+
+    }
+
+
+   #quote-card blockquote {
+
+  border-left: 4px solid #00ffe5;
+
+  padding-left: 1rem;
+
+  margin: 1rem 0 0 0;
+
+}
+
+
+.quote-text {
+
+  font-style: italic;
+
+  font-size: 1.1rem;
+
+  color: #ccc;
+
+  display: block;
+
+  margin-bottom: 0.5rem;
+
+}
+
+
+.quote-author {
+
+  font-size: 0.9rem;
+
+  color: #888;
+
+  font-family: 'Aboreto', cursive;
+
+  display: block;
+
+  text-align: right;
+
+}
+
+
+    #test-tracker input {
+
+      width: 60px;
+
+      padding: 0.3rem;
+
+      border-radius: 5px;
+
+      border: none;
+
+      background: #222;
+
+      color: #00ffe5;
+
+      margin-left: 0.5rem;
+
+      text-align: center;
+
+    }
+
+
+    #test-tracker label {
+
+      display: inline-block;
+
+      margin-bottom: 0.5rem;
+
+    }
+
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="card">
+
+      <h1>APSC CCE Prelims 2024 In Another</h1>
+
+      <div class="countdown" id="timer">
+
+        <div><span id="days">--</span><span class="countdown-label">Days</span></div>
+
+        <div><span id="hours">--</span><span class="countdown-label">Hours</span></div>
+
+        <div><span id="minutes">--</span><span class="countdown-label">Minutes</span></div>
+
+        <div><span id="seconds">--</span><span class="countdown-label">Seconds</span></div>
+
+      </div>
+
+      <div>
+
+        <h2>Sundays Remaining: <span id="sundays-count"></span></h2>
+
+      </div>
+
+    </div>
+
+
+    <div class="card" id="quote-card">
+
+      <h2>🧠 Daily Motivation</h2>
+
+      <blockquote id="quote">Loading inspiration...</blockquote>
+
+    </div>
+
+  </div>
+
+
+  <div class="card checklist">
+
+    <h2>Study Checklist 📚✅</h2>
+
+    <ul id="checklist">
+
+      <li>
+
+        <div class="section-title">Assam History</div>
+
+        <ul class="sublist">
+
+          <li><input type="checkbox" id="assam-ancient"><label for="assam-ancient">Ancient Assam History</label></li>
+
+          <li><input type="checkbox" id="assam-medieval"><label for="assam-medieval">Medieval Assam History</label></li>
+
+          <li><input type="checkbox" id="ahoms"><label for="ahoms">Ahoms</label></li>
+
+          <li><input type="checkbox" id="assam-modern"><label for="assam-modern">Modern Assam History</label></li>
+
+          <li><input type="checkbox" id="assam-culture"><label for="assam-culture">Culture and Literature</label></li>
+
+        </ul>
+
+      </li>
+
+      <li><input type="checkbox" id="assam-geography"><label for="assam-geography">Assam Geography</label></li>
+
+      <li>
+
+        <div class="section-title">General Studies Current Affairs</div>
+
+        <ul class="sublist">
+
+          <li><input type="checkbox" id="june"><label for="june">June 2024</label></li>
+
+          <li><input type="checkbox" id="july"><label for="july">July 2024</label></li>
+
+          <li><input type="checkbox" id="aug"><label for="aug">August 2024</label></li>
+
+          <li><input type="checkbox" id="sept"><label for="sept">September 2024</label></li>
+
+          <li><input type="checkbox" id="oct"><label for="oct">October 2024</label></li>
+
+          <li><input type="checkbox" id="nov"><label for="nov">November 2024</label></li>
+
+          <li><input type="checkbox" id="dec"><label for="dec">December 2024</label></li>
+
+          <li><input type="checkbox" id="jan"><label for="jan">January 2025</label></li>
+
+          <li><input type="checkbox" id="feb"><label for="feb">February 2025</label></li>
+
+          <li><input type="checkbox" id="mar"><label for="mar">March 2025</label></li>
+
+        </ul>
+
+      </li>
+
+      <li><input type="checkbox" id="modern"><label for="modern">Modern Indian History</label></li>
+
+      <li><input type="checkbox" id="polity"><label for="polity">Political Science</label></li>
+
+      <li><input type="checkbox" id="medieval"><label for="medieval">Medieval Indian History</label></li>
+
+      <li><input type="checkbox" id="ancient"><label for="ancient">Ancient Indian History</label></li>
+
+      <li>
+
+        <div class="section-title">Current Affairs QRG</div>
+
+        <ul class="sublist">
+
+          <li><input type="checkbox" id="qrg-polity"><label for="qrg-polity">Polity</label></li>
+
+          <li><input type="checkbox" id="qrg-ir"><label for="qrg-ir">International Relations</label></li>
+
+          <li><input type="checkbox" id="qrg-sci"><label for="qrg-sci">Science & Tech</label></li>
+
+          <li><input type="checkbox" id="qrg-env"><label for="qrg-env">Environment</label></li>
+
+          <li><input type="checkbox" id="qrg-misc"><label for="qrg-misc">Misc.</label></li>
+
+        </ul>
+
+      </li>
+
+      <li>
+
+        <div class="section-title">Full Length Test</div>
+
+        <div id="test-tracker">
+
+          <label for="tests-done">Attempted: </label>
+
+          <input type="number" id="tests-done" min="0" max="25"/> / 25
+
+        </div>
+
+      </li>
+
+    </ul>
+
+  </div>
+
+
+  <script>
+
+    const targetDate = new Date("2025-05-30T00:00:00");
+
+
+    function updateCountdown() {
+
+      const now = new Date();
+
+      const diff = targetDate - now;
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+
+      const minutes = Math.floor((diff / 1000 / 60) % 60);
+
+      const seconds = Math.floor((diff / 1000) % 60);
+
+
+      document.getElementById("days").textContent = days;
+
+      document.getElementById("hours").textContent = hours;
+
+      document.getElementById("minutes").textContent = minutes;
+
+      document.getElementById("seconds").textContent = seconds;
+
+    }
+
+
+    function listSundays() {
+
+      const sundays = [];
+
+      const now = new Date();
+
+      const current = new Date(now);
+
+      current.setDate(current.getDate() + ((7 - current.getDay()) % 7));
+
+      while (current <= targetDate) {
+
+        sundays.push(new Date(current));
+
+        current.setDate(current.getDate() + 7);
+
+      }
+
+      document.getElementById("sundays-count").textContent = sundays.length;
+
+      const list = document.getElementById("sundays-list");
+
+      sundays.forEach(sunday => {
+
+        const li = document.createElement("li");
+
+        li.textContent = sunday.toDateString();
+
+        list.appendChild(li);
+
+      });
+
+    }
+
+
+    function saveChecklist() {
+
+      const checkboxes = document.querySelectorAll("#checklist input[type='checkbox']");
+
+      const state = {};
+
+      checkboxes.forEach(cb => state[cb.id] = cb.checked);
+
+      localStorage.setItem("checklist", JSON.stringify(state));
+
+    }
+
+
+    function loadChecklist() {
+
+      const saved = JSON.parse(localStorage.getItem("checklist") || "{}");
+
+      const checkboxes = document.querySelectorAll("#checklist input[type='checkbox']");
+
+      checkboxes.forEach(cb => {
+
+        if (saved.hasOwnProperty(cb.id)) {
+
+          cb.checked = saved[cb.id];
+
+        }
+
+        cb.addEventListener("change", saveChecklist);
+
+      });
+
+    }
+
+
+    async function loadMotivationalQuote() {
+
+      const lastFetched = localStorage.getItem("quoteTimestamp");
+
+      const now = Date.now();
+
+      const twelveHours = 12 * 60 * 60 * 1000;
+
+      if (lastFetched && now - lastFetched < twelveHours) {
+
+        const savedQuote = localStorage.getItem("quoteText");
+
+        document.getElementById("quote").textContent = savedQuote;
+
+      } else {
+
+        try {
+
+          const res = await fetch("https://zenquotes.io/api/random");
+
+          const data = await res.json();
+
+          const quoteElement = document.getElementById("quote");
+
+          localStorage.setItem("quoteText", quote);
+
+          localStorage.setItem("quoteTimestamp", now);
+
+          quoteElement.innerHTML = `<span class="quote-text">"${data[0].q}"</span><br><span class="quote-author">— ${data[0].a}</span>`;
+
+        } catch {
+
+          document.getElementById("quote").textContent = "Keep going. You're doing great.";
+
+        }
+
+      }
+
+    }
+
+
+    function loadTestTracker() {
+
+      const input = document.getElementById("tests-done");
+
+      const saved = localStorage.getItem("testsDone") || "0";
+
+      input.value = saved;
+
+      input.addEventListener("input", () => {
+
+        localStorage.setItem("testsDone", input.value);
+
+      });
+
+    }
+
+
+    updateCountdown();
+
+    setInterval(updateCountdown, 1000);
+
+    listSundays();
+
+    loadChecklist();
+
+    loadMotivationalQuote();
+
+    loadTestTracker();
+
+
+  </script>
+
+</body>
+
+</html> 
