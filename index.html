@@ -295,26 +295,26 @@
     }
 
     async function loadMotivationalQuote() {
-      const lastFetched = localStorage.getItem("quoteTimestamp");
-      const now = Date.now();
-      const twelveHours = 12 * 60 * 60 * 1000;
+  const lastFetched = localStorage.getItem("quoteTimestamp");
+  const now = Date.now();
+  const twelveHours = 12 * 60 * 60 * 1000;
 
-      if (lastFetched && now - lastFetched < twelveHours) {
-        const savedQuote = localStorage.getItem("quoteText");
-        document.getElementById("quote").innerHTML = savedQuote;
-      } else {
-        try {
-          const res = await fetch("https://zenquotes.io/api/random");
-          const data = await res.json();
-          const quote = `<span class="quote-text">"${data[0].q}"</span><br><span class="quote-author">— ${data[0].a}</span>`;
-          localStorage.setItem("quoteText", quote);
-          localStorage.setItem("quoteTimestamp", now);
-          document.getElementById("quote").innerHTML = quote;
-        } catch {
-          document.getElementById("quote").textContent = "Keep going. You're doing great.";
-        }
-      }
+  if (lastFetched && now - lastFetched < twelveHours) {
+    const savedQuote = localStorage.getItem("quoteText");
+    document.getElementById("quote").innerHTML = savedQuote;
+  } else {
+    try {
+      const res = await fetch("https://api.quotable.io/random");
+      const data = await res.json();
+      const quote = `<span class="quote-text">"${data.content}"</span><br><span class="quote-author">— ${data.author}</span>`;
+      localStorage.setItem("quoteText", quote);
+      localStorage.setItem("quoteTimestamp", now);
+      document.getElementById("quote").innerHTML = quote;
+    } catch {
+      document.getElementById("quote").textContent = "Keep going. You're doing great.";
     }
+  }
+}
 
     function loadTestTracker() {
       const input = document.getElementById("tests-done");
