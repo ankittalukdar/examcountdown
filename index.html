@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -10,161 +9,246 @@
   <link href="https://fonts.googleapis.com/css?family=Urbanist&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 
-  <style>
+<style>
+  body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: linear-gradient(to right, #0f0f0f, #1a1a1a);
+    color: #fff;
+    margin: 0;
+    padding: 2rem;
+    font-size: 13px;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    line-height: 2.0;
+  }
+
+  h1, h2 {
+    font-family: 'Urbanist', sans-serif;
+    font-weight: 700;
+    color: #00FFFF;
+  }
+
+  .container {
+    max-width: 700px;
+    flex-grow: 1;
+  }
+
+  .card {
+    background: rgba(30, 30, 30, 0.9);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.05);
+    margin-bottom: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .countdown {
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    background: #000;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    flex-wrap: wrap;
+  }
+
+  .countdown div {
+    flex: 1;
+  }
+
+  .countdown-label {
+    font-size: 0.9rem;
+    color: #888;
+    display: block;
+    margin-top: 0.2rem;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+
+  label {
+    margin-left: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+
+  input[type="checkbox"] {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  input[type="checkbox"]:focus {
+    outline: 2px solid #00ffe5;
+    accent-color: #00ffe5;
+  }
+
+  .checklist {
+    width: 350px;
+    position: sticky;
+    top: 2rem;
+    align-self: flex-start;
+  }
+
+  #checklist > li > label,
+  #checklist > li > .section-title {
+    color: #ffd700;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .checklist-heading {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #ffcc00;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 2px rgba(255, 204, 0, 0.2);
+  }
+
+  .sublist {
+    margin-left: 1.5rem;
+  }
+
+  .section-title {
+    font-weight: bold;
+    margin-top: 1rem;
+    color: #ccc;
+  }
+
+  #quote {
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #ccc;
+    transition: opacity 0.8s ease-in;
+    opacity: 1;
+  }
+
+  #quote-card blockquote {
+    border-left: 4px solid #00ffe5;
+    padding-left: 1rem;
+    margin: 1rem 0 0 0;
+  }
+
+  .quote-text {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #ccc;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .quote-author {
+    font-size: 0.9rem;
+    color: #888;
+    font-family: 'Urbanist', cursive;
+    display: block;
+    text-align: right;
+  }
+
+  #test-tracker input {
+    width: 60px;
+    padding: 0.3rem;
+    border-radius: 5px;
+    border: none;
+    background: #222;
+    color: #00ffe5;
+    margin-left: 0.5rem;
+    text-align: center;
+  }
+
+  #test-tracker label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+  }
+
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* === 📱 Responsive Styling === */
+  @media (max-width: 768px) {
     body {
-      font-family: 'Poppins', Arial, sans-serif;    
-      background: linear-gradient(to right, #0f0f0f, #1a1a1a);
-      color: #fff;
-      margin: 0;
-      padding: 2rem;
-      font-size: 13px;
-      display: flex;
-      flex-direction: row;
-      gap: 2rem;
-      line-height: 2.0;
-    }
-
-    h1, h2 {
-      font-family: 'Urbanist', sans-serif;
-      font-weight: 700;
-      color: #00FFFF;
-    }
-
-    .container {
-      max-width: 700px;
-      flex-grow: 1;
-    }
-
-    .card {
-      background: rgba(30, 30, 30, 0.9);
-      border-radius: 1rem;
-      padding: 1.5rem;
-      box-shadow: 0 10px 30px rgba(0, 255, 255, 0.05);
-      margin-bottom: 2rem;
-    }
-
-    .countdown {
-      font-size: 3rem;
-      font-weight: bold;
-      letter-spacing: 2px;
-      display: flex;
-      gap: 1rem;
-      justify-content: space-between;
-      background: #000;
+      flex-direction: column;
       padding: 1rem;
-      border-radius: 0.5rem;
-      text-align: center;
-    }
-
-    .countdown div {
-      flex: 1;
-    }
-
-    .countdown-label {
-      font-size: 0.9rem;
-      color: #888;
-      display: block;
-      margin-top: 0.2rem;
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    li {
-      margin-bottom: 0.5rem;
-    }
-
-    label {
-      margin-left: 0.5rem;
-      cursor: pointer;
-    }
-
-    input[type="checkbox"]:focus {
-      outline: 2px solid #00ffe5;
-      accent-color: #00ffe5;
     }
 
     .checklist {
-      width: 350px;
-      position: sticky;
-      top: 2rem;
-      align-self: flex-start;
+      width: 100%;
+      position: relative;
+      top: 0;
     }
 
-    #checklist > li > label,
-    #checklist > li > .section-title {
-      color: #ffd700;
-      font-size: 1rem;
-      font-weight: bold;
-      font-family: 'Poppins', sans-serif;
+    .countdown {
+      font-size: 2rem;
+      justify-content: center;
     }
 
-    .checklist-heading {
-      font-size: 1.6rem;
-      font-weight: 600;
-      color: #ffcc00;
+    .countdown div {
+      flex: none;
+      width: 40%;
       margin-bottom: 1rem;
-      text-shadow: 1px 1px 2px rgba(255, 204, 0, 0.2);
-    }
-
-    .sublist {
-      margin-left: 1.5rem;
-    }
-
-    .section-title {
-      font-weight: bold;
-      margin-top: 1rem;
-      color: #ccc;
-    }
-
-    #quote {
-      font-style: italic;
-      font-size: 1.2rem;
-      color: #ccc;
-      transition: opacity 0.8s ease-in;
-      opacity: 1;
-    }
-
-    #quote-card blockquote {
-      border-left: 4px solid #00ffe5;
-      padding-left: 1rem;
-      margin: 1rem 0 0 0;
-    }
-
-    .quote-text {
-      font-style: italic;
-      font-size: 1.1rem;
-      color: #ccc;
-      display: block;
-      margin-bottom: 0.5rem;
-    }
-
-    .quote-author {
-      font-size: 0.9rem;
-      color: #888;
-      font-family: 'Aboreto', cursive;
-      display: block;
-      text-align: right;
     }
 
     #test-tracker input {
-      width: 60px;
-      padding: 0.3rem;
-      border-radius: 5px;
-      border: none;
-      background: #222;
-      color: #00ffe5;
-      margin-left: 0.5rem;
-      text-align: center;
+      width: 100%;
+      margin-top: 0.5rem;
     }
 
-    #test-tracker label {
-      display: inline-block;
-      margin-bottom: 0.5rem;
+    #test-tracker {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
     }
-  </style>
+
+    .card {
+      padding: 1rem;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    .quote-text {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    body {
+      font-size: 12px;
+    }
+
+    h1 {
+      font-size: 1.3rem;
+    }
+
+    .checklist-heading {
+      font-size: 1.2rem;
+    }
+
+    .quote-text {
+      font-size: 0.95rem;
+    }
+
+    .quote-author {
+      font-size: 0.8rem;
+    }
+  }
+</style>  
+
 </head>
 
 <body>
